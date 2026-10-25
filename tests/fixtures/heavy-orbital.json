@@ -1,0 +1,49 @@
+{
+  "fairingModel": "f37",
+  "name": "MERIDIAN / 曙光一号",
+  "payload": 10000,
+  "fairing": true,
+  "battery": 2,
+  "stages": [
+    {
+      "coupling": "separator",
+      "adapter": true,
+      "id": "stage-1792914546200-20",
+      "engine": "be4",
+      "engines": 2,
+      "diameter": 5,
+      "tankModules": [
+        "m50l"
+      ],
+      "tankLength": 12,
+      "fill": 1,
+      "fuel": "methalox",
+      "material": "aluminum",
+      "valve": true,
+      "fins": true
+    },
+    {
+      "coupling": "separator",
+      "adapter": true,
+      "id": "stage-1792914546200-21",
+      "engine": "be3u",
+      "engines": 1,
+      "diameter": 3.7,
+      "tankModules": [
+        "h37m"
+      ],
+      "tankLength": 8,
+      "fill": 1,
+      "fuel": "hydrolox",
+      "material": "aluminum",
+      "valve": true,
+      "fins": false
+    }
+  ],
+  "guidance": {
+    "turnStart": 750,
+    "turnEnd": 100000,
+    "maxG": 3.5,
+    "autoStage": true
+  }
+}

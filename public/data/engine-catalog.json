@@ -1,0 +1,541 @@
+{
+  "checkedAt": "2026-10-25",
+  "notice": "公开数据与仿真假设分列，非完整工程数据或采购价格。",
+  "engines": [
+    {
+      "id": "merlin-1d",
+      "name": "Merlin 1D",
+      "role": "SpaceX · 海平面运载",
+      "fuel": "kerolox",
+      "sea": 845000,
+      "vac": 914000,
+      "ispSea": 282,
+      "ispVac": 311,
+      "mass": 470,
+      "cost": 14500,
+      "gimbal": 6,
+      "minThrottle": 0.4,
+      "restarts": 3,
+      "diameter": 1.05,
+      "description": "煤油/液氧燃气发生器循环。推力与工况来自厂商资料，其余未核实字段以明确的仿真估计补全。",
+      "provenance": {
+        "manufacturer": "SpaceX",
+        "country": "美国",
+        "configuration": "Falcon 9 / M1D，2025 用户手册推力口径",
+        "published": {
+          "sea": 845000
+        },
+        "sources": [
+          {
+            "title": "SpaceX · Falcon 9 / Merlin",
+            "url": "https://www.spacex.com/vehicles/falcon-9/"
+          },
+          {
+            "title": "SpaceX · Falcon User’s Guide (2025-05-09)",
+            "url": "https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf"
+          }
+        ],
+        "notes": "914 kN 真空推力、282/311 s 比冲、470 kg 质量、1.05 m 外形，以及摆角/节流/点火次数均为本版仿真假设，不作为厂商公开定值。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "merlin-vac",
+      "name": "Merlin Vacuum",
+      "role": "SpaceX · 真空上面级",
+      "fuel": "kerolox",
+      "sea": 400000,
+      "vac": 981000,
+      "ispSea": 240,
+      "ispVac": 348,
+      "mass": 520,
+      "cost": 19500,
+      "gimbal": 5,
+      "minThrottle": 0.12,
+      "restarts": 8,
+      "diameter": 2.7,
+      "description": "Falcon 9 上面级真空发动机。大膨胀比喷管提高真空效率，需要足够的安装直径。",
+      "provenance": {
+        "manufacturer": "SpaceX",
+        "country": "美国",
+        "configuration": "Falcon 9 第二级，官网 981 kN 口径",
+        "published": {
+          "vac": 981000
+        },
+        "sources": [
+          {
+            "title": "SpaceX · Falcon 9 / Merlin",
+            "url": "https://www.spacex.com/vehicles/falcon-9/"
+          }
+        ],
+        "notes": "仅将官网明确给出的真空推力列为公开定值。海平面性能、348 s 比冲、质量、几何与控制包线为仿真估计。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "raptor-3",
+      "name": "Raptor 3",
+      "role": "SpaceX · 甲烷全流量补燃",
+      "fuel": "methalox",
+      "sea": 2745862,
+      "vac": 3000000,
+      "ispSea": 330,
+      "ispVac": 350,
+      "mass": 1720,
+      "cost": 37000,
+      "gimbal": 8,
+      "minThrottle": 0.4,
+      "restarts": 6,
+      "diameter": 1.5,
+      "description": "采用厂商 2024 公告的海平面型参考数据；350 s 未标明测试环境，不强行归为某一公开工况。",
+      "provenance": {
+        "manufacturer": "SpaceX",
+        "country": "美国",
+        "configuration": "2024-08-03 海平面型公告参考；非全系列统一规格",
+        "published": {
+          "mass": 1525
+        },
+        "sources": [
+          {
+            "title": "SpaceX · Raptor 3 公告（原帖访问可能受限）",
+            "url": "https://x.com/SpaceX/status/1819772716339339664"
+          },
+          {
+            "title": "DLR 作者研究 · Starship / Raptor 公开参数与原始出处",
+            "url": "https://doi.org/10.1007/s12567-025-00625-8"
+          }
+        ],
+        "notes": "文献转引公告列出 280 tf、350 s、发动机本体 1525 kg、含箭上配套 1720 kg。模型采用 1720 kg 安装质量；海平面/真空比冲分配、真空推力和控制包线为估计。",
+        "verification": "原帖当前 403；按 DLR 作者研究转引的厂商公告录入，未冒充本次直接核验。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "be4",
+      "name": "BE-4",
+      "role": "Blue Origin · 甲烷主发动机",
+      "fuel": "methalox",
+      "sea": 2846000,
+      "vac": 3100000,
+      "ispSea": 310,
+      "ispVac": 340,
+      "mass": 2500,
+      "cost": 42000,
+      "gimbal": 6,
+      "minThrottle": 0.3436401967673928,
+      "restarts": 3,
+      "diameter": 1.8,
+      "description": "富氧分级燃烧、液氧/液化天然气推进。官网当前推力为 2,846 kN，不能与旧版 550,000 lbf 混用。",
+      "provenance": {
+        "manufacturer": "Blue Origin",
+        "country": "美国",
+        "configuration": "官网当前 640,000 lbf 档位；标称推力工况未明确",
+        "published": {
+          "minThrottle": 0.3436401967673928
+        },
+        "sources": [
+          {
+            "title": "Blue Origin · Engines（2026-10-25 页面快照口径）",
+            "url": "https://www.blueorigin.com/engines"
+          }
+        ],
+        "notes": "官网给出标称 2846 kN、最低 978 kN，未注明推力环境。模型将标称推力用于海平面；真空推力、比冲、质量、几何和摆角为估计。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "be3u",
+      "name": "BE-3U",
+      "role": "Blue Origin · 氢氧上面级",
+      "fuel": "hydrolox",
+      "sea": 250000,
+      "vac": 890000,
+      "ispSea": 300,
+      "ispVac": 445,
+      "mass": 1200,
+      "cost": 36000,
+      "gimbal": 5,
+      "minThrottle": 0.5,
+      "restarts": 4,
+      "diameter": 2.2,
+      "description": "可再启动的开式膨胀循环氢氧上面级。选用当前 200,000 lbf 档位，避免混用早期型号。",
+      "provenance": {
+        "manufacturer": "Blue Origin",
+        "country": "美国",
+        "configuration": "New Glenn 上面级，官网 200,000 lbf 档位",
+        "published": {
+          "vac": 890000,
+          "minThrottle": 0.5
+        },
+        "sources": [
+          {
+            "title": "Blue Origin · Engines（2026-10-25 页面快照口径）",
+            "url": "https://www.blueorigin.com/engines"
+          }
+        ],
+        "notes": "官网给出 890 kN / 445 kN 调节范围；其余数值为游戏仿真估计，价格不是真实采购价格。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "be7",
+      "name": "BE-7",
+      "role": "Blue Origin · 氢氧着陆推进",
+      "fuel": "hydrolox",
+      "sea": 10000,
+      "vac": 44500,
+      "ispSea": 300,
+      "ispVac": 450,
+      "mass": 180,
+      "cost": 12000,
+      "gimbal": 6,
+      "minThrottle": 0.2,
+      "restarts": 8,
+      "diameter": 0.8,
+      "description": "双膨胀循环、深度节流氢氧发动机。适合低推力任务，不适合直接替代大型地面主发动机。",
+      "provenance": {
+        "manufacturer": "Blue Origin",
+        "country": "美国",
+        "configuration": "Blue Moon 着陆推进参考",
+        "published": {
+          "vac": 44500,
+          "minThrottle": 0.2
+        },
+        "sources": [
+          {
+            "title": "Blue Origin · Engines（2026-10-25 页面快照口径）",
+            "url": "https://www.blueorigin.com/engines"
+          }
+        ],
+        "notes": "官网给出 44.5 kN / 8.9 kN 调节范围；工况按月面真空任务解释。未公开的比冲、质量与几何为仿真估计。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "rs25",
+      "name": "RS-25",
+      "role": "NASA / L3Harris · 氢氧主发动机",
+      "fuel": "hydrolox",
+      "sea": 1860000,
+      "vac": 2279000,
+      "ispSea": 366,
+      "ispVac": 452,
+      "mass": 3520,
+      "cost": 72000,
+      "gimbal": 8,
+      "minThrottle": 0.67,
+      "restarts": 1,
+      "diameter": 2,
+      "description": "高性能分级燃烧氢氧发动机。高比冲伴随较大的储箱体积与发动机质量。",
+      "provenance": {
+        "manufacturer": "NASA / Aerojet Rocketdyne",
+        "country": "美国",
+        "configuration": "SLS，109% 推力档位；重量按约 3.52 t",
+        "published": {
+          "vac": 2279000,
+          "mass": 3520
+        },
+        "sources": [
+          {
+            "title": "NASA · RS-25 核心级发动机",
+            "url": "https://www.nasa.gov/reference/space-launch-system-rs-25-core-stage-engine/"
+          },
+          {
+            "title": "NASA · Artemis II SLS Reference Guide / 2026",
+            "url": "https://www.nasa.gov/wp-content/uploads/2026/01/sls-5558-artemis-ii-sls-reference-guide-final-review-508-012026.pdf"
+          }
+        ],
+        "notes": "NASA 给出约 2279 kN 真空推力及约 3.52 t 重量。海平面性能、366/452 s 比冲等未在本次选定主源逐项核实，模型使用参考估计。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "rl10c1",
+      "name": "RL10C-1",
+      "role": "L3Harris · 氢氧真空推进",
+      "fuel": "hydrolox",
+      "sea": 25000,
+      "vac": 101819.79277331283,
+      "ispSea": 300,
+      "ispVac": 449.7,
+      "mass": 190.5087954,
+      "cost": 28000,
+      "gimbal": 4,
+      "minThrottle": 0.3,
+      "restarts": 8,
+      "diameter": 1.4478,
+      "description": "膨胀循环氢氧上面级。按厂商 2024 规格表的 RL10C-1 列录入，保留与其他 RL10 型号的差别。",
+      "provenance": {
+        "manufacturer": "L3Harris / Aerojet Rocketdyne",
+        "country": "美国",
+        "configuration": "2024 规格表 RL10C-1 列；英制单位换算",
+        "published": {
+          "vac": 101819.79277331283,
+          "ispVac": 449.7,
+          "mass": 190.5087954,
+          "diameter": 1.4478
+        },
+        "sources": [
+          {
+            "title": "L3Harris · RL10 Propulsion System / 2024 规格表",
+            "url": "https://www.l3harris.com/sites/default/files/2024-07/l3harris-ar-rl10-spec-sheet.pdf"
+          }
+        ],
+        "notes": "公开值分别为 22,890 lbf、449.7 s、420 lb、57 in 喷管直径。海平面性能、控制与价格是游戏估计。原 PDF 链接当前可能 404，数据按已索引的厂商表格快照核对。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "rl10b2",
+      "name": "RL10B-2",
+      "role": "L3Harris · 大膨胀比氢氧",
+      "fuel": "hydrolox",
+      "sea": 22000,
+      "vac": 110093.48497769737,
+      "ispSea": 300,
+      "ispVac": 465.5,
+      "mass": 301.18533368000004,
+      "cost": 32000,
+      "gimbal": 4,
+      "minThrottle": 0.3,
+      "restarts": 4,
+      "diameter": 2.1463,
+      "description": "高比冲、大喷管上面级。喷管几何会限制并联数量与安装直径。",
+      "provenance": {
+        "manufacturer": "L3Harris / Aerojet Rocketdyne",
+        "country": "美国",
+        "configuration": "2024 表格 RL10B-2 / RL10C-2-1 合列口径",
+        "published": {
+          "vac": 110093.48497769737,
+          "ispVac": 465.5,
+          "mass": 301.18533368000004,
+          "diameter": 2.1463
+        },
+        "sources": [
+          {
+            "title": "L3Harris · RL10 Propulsion System / 2024 规格表",
+            "url": "https://www.l3harris.com/sites/default/files/2024-07/l3harris-ar-rl10-spec-sheet.pdf"
+          }
+        ],
+        "notes": "采用该表合列值：24,750 lbf、465.5 s、664 lb、84.5 in。不是把其他年份的 466.5 s 混入此配置。海平面性能和控制等为估计。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "vinci",
+      "name": "Vinci",
+      "role": "ArianeGroup · 氢氧上面级",
+      "fuel": "hydrolox",
+      "sea": 35000,
+      "vac": 180000,
+      "ispSea": 310,
+      "ispVac": 457.2,
+      "mass": 550,
+      "cost": 30000,
+      "gimbal": 5,
+      "minThrottle": 0.7222222222222222,
+      "restarts": 5,
+      "diameter": 1.84,
+      "description": "以 2020 厂商资料的 180 kN 工作点为参考。不同工作点和历年试验值不混为一个参数。",
+      "provenance": {
+        "manufacturer": "ArianeGroup",
+        "country": "欧洲",
+        "configuration": "2020 规格表 180 kN 工作点",
+        "published": {
+          "vac": 180000,
+          "ispVac": 457.2,
+          "diameter": 1.84
+        },
+        "sources": [
+          {
+            "title": "ArianeGroup · Vinci 2020 规格表",
+            "url": "https://arianegroup.preprod.sweetpunk.io/wp-content/uploads/2020/06/VINCI_2020_04_DS_EN_Eng_Web.pdf"
+          },
+          {
+            "title": "DLR · Vinci 高空试验台与 180 kN 工作点",
+            "url": "https://www.dlr.de/en/ra/research-transfer/research-and-test-infrastructure/test-benches-for-space-propulsion/high-altitude-simulation-test-bench-p4/test-position-p4.1"
+          }
+        ],
+        "notes": "表中公开另一个 130 kN 工作点，本版将它作为可选节流下限近似，不宣称是硬件最小节流极限。质量、地面性能等为估计；厂商旧 PDF 可能无法直连。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "vulcain21",
+      "name": "Vulcain 2.1",
+      "role": "ArianeGroup · 氢氧主发动机",
+      "fuel": "hydrolox",
+      "sea": 850000,
+      "vac": 1371000,
+      "ispSea": 320,
+      "ispVac": 432,
+      "mass": 2000,
+      "cost": 48000,
+      "gimbal": 6,
+      "minThrottle": 0.85,
+      "restarts": 1,
+      "diameter": 2.1,
+      "description": "氢氧燃气发生器循环主发动机。按 2020 厂商表的 1371 kN 配置建模。",
+      "provenance": {
+        "manufacturer": "ArianeGroup",
+        "country": "欧洲",
+        "configuration": "2020 公开规格表，不混用其他年份额定值",
+        "published": {
+          "vac": 1371000,
+          "ispVac": 432,
+          "diameter": 2.1
+        },
+        "sources": [
+          {
+            "title": "ArianeGroup · Vulcain 2.1 / 2020 规格表",
+            "url": "https://arianegroup.preprod.sweetpunk.io/wp-content/uploads/2020/06/VULCAIN2.1_2020_04_PS_EN_Web.pdf"
+          }
+        ],
+        "notes": "海平面推力、质量和控制参数为仿真估计。规格表列 1371 kN、432 s、喷管出口 2.1 m；旧 PDF 链接可能不稳定。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "yf100",
+      "name": "YF-100",
+      "role": "中国航天 · 煤油补燃主发动机",
+      "fuel": "kerolox",
+      "sea": 1200000,
+      "vac": 1340000,
+      "ispSea": 300.0005098581065,
+      "ispVac": 335,
+      "mass": 1920,
+      "cost": 24000,
+      "gimbal": 5,
+      "minThrottle": 0.72,
+      "restarts": 1,
+      "diameter": 1.35,
+      "description": "120 吨级液氧煤油富氧补燃发动机。区分 YF-100 基础型与后续 K、N 等改型。",
+      "provenance": {
+        "manufacturer": "中国航天科技集团六院",
+        "country": "中国",
+        "configuration": "文献基础型；120 吨级 / 2022 调节能力表口径",
+        "published": {
+          "sea": 1200000,
+          "ispSea": 300.0005098581065
+        },
+        "sources": [
+          {
+            "title": "研制团队论文 · 长征五号火箭液氧煤油发动机总体技术",
+            "url": "https://jdse.bit.edu.cn/sktcxb/cn/article/doi/10.15982/j.issn.2096-9287.2021.20210003?viewType=HTML"
+          },
+          {
+            "title": "深空探测学报 · 发动机推力调节能力表（2022）",
+            "url": "https://cdn.sciengine.com/doi/pdf/2F912114BA204049BADD47DDB2E98B44"
+          }
+        ],
+        "notes": "地面推力由双机 2400 kN 表项折算，地面比冲由 2942 m/s 除以标准重力换算。真空性能、1920 kg 本体质量、几何和控制是本版未逐项核实的参考估计。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "yf115",
+      "name": "YF-115",
+      "role": "中国航天 · 煤油高空补燃",
+      "fuel": "kerolox",
+      "sea": 70000,
+      "vac": 180000,
+      "ispSea": 250,
+      "ispVac": 338.8415004104358,
+      "mass": 540,
+      "cost": 17500,
+      "gimbal": 5,
+      "minThrottle": 0.83,
+      "restarts": 1,
+      "diameter": 0.95,
+      "description": "18 吨级高空液氧煤油发动机。比冲采用选定文献工作点，不混入后续改型数值。",
+      "provenance": {
+        "manufacturer": "中国航天科技集团六院",
+        "country": "中国",
+        "configuration": "2022 调节能力表 YF-115 项；不是 YF-115B",
+        "published": {
+          "vac": 180000,
+          "ispVac": 338.8415004104358,
+          "minThrottle": 0.83
+        },
+        "sources": [
+          {
+            "title": "深空探测学报 · 发动机推力调节能力表（2022）",
+            "url": "https://cdn.sciengine.com/doi/pdf/2F912114BA204049BADD47DDB2E98B44"
+          }
+        ],
+        "notes": "文献表列 180 kN（真空）、3322.9 m/s 和 83% 调节能力。用 g0 转成秒；质量、尺寸、海平面性能为参考估计。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "rutherford-sl",
+      "name": "Rutherford SL",
+      "role": "Rocket Lab · 电泵煤油",
+      "fuel": "kerolox",
+      "sea": 24910.041045458798,
+      "vac": 28000,
+      "ispSea": 311,
+      "ispVac": 330,
+      "mass": 35,
+      "cost": 3500,
+      "gimbal": 5,
+      "minThrottle": 0.7,
+      "restarts": 1,
+      "diameter": 0.3,
+      "description": "小推力电泵发动机。采用 2020 性能升级公告的海平面版本口径。泵电源额外质量按游戏模型折算。",
+      "provenance": {
+        "manufacturer": "Rocket Lab",
+        "country": "美国",
+        "configuration": "2020-08-04 升级公告海平面版本",
+        "published": {
+          "sea": 24910.041045458798,
+          "mass": 35
+        },
+        "sources": [
+          {
+            "title": "Rocket Lab · Rutherford 性能升级公告（2020-08-04）",
+            "url": "https://rocketlabcorp.com/updates/rocket-lab-increases-electron-payload-capacity-enabling-interplanetary-missions-and-reusability/"
+          }
+        ],
+        "notes": "公告给出 5600 lbf、311 s 与 35 kg 发动机本体；未单独公开测试环境。真空性能、尺寸和控制为估计，电泵电源配套按每台 80 kg 游戏质量附加，不属于 35 kg 本体。",
+        "checkedAt": "2026-10-25"
+      }
+    },
+    {
+      "id": "rutherford-vac",
+      "name": "Rutherford Vacuum",
+      "role": "Rocket Lab · 真空电泵推进",
+      "fuel": "kerolox",
+      "sea": 10000,
+      "vac": 25799.685368510898,
+      "ispSea": 260,
+      "ispVac": 343,
+      "mass": 35,
+      "cost": 4500,
+      "gimbal": 4,
+      "minThrottle": 0.7,
+      "restarts": 1,
+      "diameter": 0.65,
+      "description": "Rutherford 真空优化型，25.8 kN 级。小型卫星与轻型上面级需要重新缩小储箱和干重。",
+      "provenance": {
+        "manufacturer": "Rocket Lab",
+        "country": "美国",
+        "configuration": "2020-08-04 升级公告真空版本",
+        "published": {
+          "vac": 25799.685368510898,
+          "ispVac": 343,
+          "mass": 35
+        },
+        "sources": [
+          {
+            "title": "Rocket Lab · Rutherford 性能升级公告（2020-08-04）",
+            "url": "https://rocketlabcorp.com/updates/rocket-lab-increases-electron-payload-capacity-enabling-interplanetary-missions-and-reusability/"
+          }
+        ],
+        "notes": "5800 lbf 与 343 s 来自同一公告。35 kg 按文中发动机家族本体口径，未公开真空型单独质量差异；海平面性能、几何、控制和每台 80 kg 配套电源为模型估计。",
+        "checkedAt": "2026-10-25"
+      }
+    }
+  ]
+}

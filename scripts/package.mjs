@@ -1,0 +1,20 @@
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
+const dist=resolve('dist');
+let html=readFileSync(resolve(dist,'index.html'),'utf8');
+const script=html.match(/<script[^>]+src="([^"]+)"[^>]*><\/script>/)?.[0];
+const scriptPath=script?.match(/src="([^"]+)"/)?.[1];
+const style=html.match(/<link[^>]+rel="stylesheet"[^>]*>/)?.[0];
+const stylePath=style?.match(/href="([^"]+)"/)?.[1];
+if(!script||!scriptPath||!style||!stylePath)throw new Error('Unexpected Vite output');
+let css=readFileSync(resolve(dist,stylePath.replace(/^\//,'')),'utf8');
+css=css.replace(/url\(([^)]+)\)/g,(match,url)=>{
+ const path=url.replace(/["']/g,'');if(path.startsWith('data:'))return match;
+ const ext=path.split('.').pop();const data=readFileSync(resolve(dist,path.replace(/^\//,''))).toString('base64');return `url(data:font/${ext};base64,${data})`;
+});
+const js=readFileSync(resolve(dist,scriptPath.replace(/^\//,'')),'utf8');
+html=html.replace(script,`<script type="module">${js.replace(/<\/script/gi,'<\\/script')}</script>`).replace(style,`<style>${css}</style>`).replace(/href="\/favicon.svg"/,`href="data:image/svg+xml;base64,${readFileSync(resolve(dist,'favicon.svg')).toString('base64')}"`);
+const licenses=['barlow-condensed','ibm-plex-mono'].map(name=>`${name} — SIL Open Font License\n${readFileSync(resolve('node_modules/@fontsource',name,'LICENSE'),'utf8')}`).join('\n\n');
+html=html.replace(/<!doctype html>/i,`<!doctype html>\n<!-- Embedded fonts: third-party notices\n${licenses.replace(/-->/g,'-- >')}\n-->`);
+mkdirSync('releases',{recursive:true});writeFileSync('releases/GoToMars-v1.0.html',html);
+console.log(`Created releases/GoToMars-v1.0.html (${Math.round(Buffer.byteLength(html)/1024)} KiB), all assets embedded.`);
