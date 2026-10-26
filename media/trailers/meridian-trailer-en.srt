@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:04,000
+FIRST, BUILD A ROCKET.
+Your mission starts here.
+
+2
+00:00:04,000 --> 00:00:10,000
+EVERY PART CHANGES THE FLIGHT.
+Modular parts / Propellant compatibility / 15 real-engine references
+
+3
+00:00:10,000 --> 00:00:14,000
+FROM WORKSHOP TO LAUNCHPAD.
+Check your design. Let the flight give you answers.
+
+4
+00:00:14,000 --> 00:00:21,000
+IGNITION.
+Thrust, mass and drag shape your trajectory.
+
+5
+00:00:21,000 --> 00:00:27,000
+STAGING IS PART OF THE PHYSICS.
+Real mass changes / Upper-stage ignition
+
+6
+00:00:27,000 --> 00:00:33,000
+ONE CONTINUOUS FLIGHT TO ORBIT.
+From leaving the pad to building orbital velocity.
+
+7
+00:00:33,000 --> 00:00:37,000
+YOUR ROCKET. YOUR ORBIT.
+Earth orbit confirmed. Now try a different design.
+
+8
+00:00:37,000 --> 00:00:42,000
+MERIDIAN
+BUILD YOUR WAY TO ORBIT / OPEN-SOURCE ROCKET ENGINEERING

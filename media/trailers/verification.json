@@ -1,0 +1,56 @@
+{
+  "results": [
+    {
+      "file": "media/trailers/meridian-trailer-zh.mp4",
+      "bytes": 15739633,
+      "sha256": "6d8b0b38d5a6acbe4256672d6452dcd3b276f49c09f2f39ecbef5202fb39987a",
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "pixelFormat": "yuv420p"
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": "48000",
+        "channels": 2
+      },
+      "decode": "passed",
+      "browser": {
+        "width": 1920,
+        "height": 1080,
+        "duration": 42,
+        "advanced": true,
+        "seeked": 39,
+        "readyState": 4
+      }
+    },
+    {
+      "file": "media/trailers/meridian-trailer-en.mp4",
+      "bytes": 15669171,
+      "sha256": "08be5af87920a87653b706b01d401153a8c243e7b359a862dd8b87620cb5f674",
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "pixelFormat": "yuv420p"
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": "48000",
+        "channels": 2
+      },
+      "decode": "passed",
+      "browser": {
+        "width": 1920,
+        "height": 1080,
+        "duration": 42,
+        "advanced": true,
+        "seeked": 39,
+        "readyState": 4
+      }
+    }
+  ]
+}

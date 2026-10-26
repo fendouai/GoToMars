@@ -11,7 +11,10 @@
     "test:e2e": "playwright test",
     "release": "npm run export:data && npm run build && node scripts/package-orbital.mjs",
     "test:3d": "tsx --test tests/orbital.test.ts",
-    "export:data": "tsx scripts/export-engines.ts"
+    "export:data": "tsx scripts/export-engines.ts",
+    "trailer:capture": "node tools/trailer/capture.mjs",
+    "trailer:finish": "python3 tools/trailer/finish.py",
+    "trailer:verify": "node tools/trailer/verify.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",

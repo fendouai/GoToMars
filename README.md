@@ -4,6 +4,14 @@
 
 Go To Mars 的 3D 重制版本。现在聚焦一件事：用可以组合的零件制造火箭，沿一条连续的三维轨迹从地面进入真实尺度地球轨道。
 
+## 实机宣传片 / Gameplay trailers
+
+[![MERIDIAN 实机宣传片](media/trailers/poster.jpg)](media/trailers/meridian-trailer-zh.mp4)
+
+[▶ 中文版](media/trailers/meridian-trailer-zh.mp4) · [▶ English trailer](media/trailers/meridian-trailer-en.mp4)
+
+42 秒 · 1080p · 实机镜头剪辑 · 原创合成配乐。包含制造、发射、分级与地球入轨；飞行已加速。[字幕、制作说明与复现方法](media/trailers/README.md)。
+
 ## 立即运行
 
 - 先执行 `npm ci` 和 `npm run release`，再双击生成的 `releases/MERIDIAN-3D-v2.html` 可离线运行，无需安装依赖。需要支持 WebGL 2 的浏览器及硬件加速。
